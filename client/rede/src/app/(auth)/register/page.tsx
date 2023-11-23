@@ -34,17 +34,45 @@ function Register(){
 
     return(
         <>
-        <title>cadastre-se</title>
-        <h1 className="font-bold text-2xl">registrar</h1>
-        <AuthInput label="nome" newState={setUserName}/>
-        <AuthInput label="email" newState={setEmail}/>
-        <AuthInput label="senha" newState={setPassword} isPassword/>
-        <AuthInput label="confirme sua senha" newState={setConfirmPassword}isPassword/>
+        <h1 className="text-center" style={{ color: "#21344d", fontSize: "50px", fontWeight: "bold", fontFamily: 'Inter', alignItems: 'center' }}>Registrar</h1>
+          
+        <h1 className="text-center" style={{ fontFamily: 'Inter', color: "#21344d", fontSize: "20px", fontWeight: "bold", textAlign: 'left' }}>Nome</h1>
+        <AuthInput label="  " newState={setUserName} />
+        <h1 className="text-center" style={{fontFamily: 'Inter', color: "#21344d", fontSize: "20px", fontWeight: "bold", textAlign: 'left' }}>Email</h1>
+        <AuthInput label=" " newState={setEmail}/>
+        <h1 className="text-center" style={{ fontFamily: 'Inter', color: "#21344d", fontSize: "20px", fontWeight: "bold",  textAlign: 'left' }}>Senha</h1>
+          
+        <AuthInput label=" " newState={setPassword} isPassword/>
+        <h1 className="text-center" style={{fontFamily: 'Inter',  color: "#21344d", fontSize: "20px", fontWeight: "bold",  textAlign: 'left' }}>Confirme a senha</h1>
+          
+        <AuthInput label="  " newState={setConfirmPassword}isPassword/>
+
         {error.length>0 && <span className="text-red-600">* {error}</span>}
         {sucess.length>0 && <span className="text-green-600">* {sucess}</span>}
-        <button className="bg-blue-400 py-3 font-bold text-white rounded-lg hover:bg-blue-600" 
-                onClick={(e)=>handleRegister(e)}>cadastrar</button>
-                <Link href='/login' className="text-center underline">logar</Link>
+
+        <button 
+         style={{
+        backgroundColor: '#1457ae',
+        fontSize: '20px',
+        fontWeight: 'bold',
+        cursor: 'pointer',
+        color: '#ffffff',
+        fontFamily: 'Inter',
+      }}
+      className="py-3 font-bold text-white rounded-lg hover:092948" 
+      onClick={(e)=>handleRegister(e)}>Cadastrar</button>
+       
+
+    <Link href='/login' 
+     style={{
+        fontSize: '20px',
+        fontWeight: 'italic',
+        color: "#00000",
+        fontFamily: 'Inter',
+        }}
+    className="text-center underline">
+    <strong>Logar</strong>
+    </Link>
         </>
         )
     }
