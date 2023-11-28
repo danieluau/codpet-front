@@ -35,7 +35,10 @@ function Register(){
     return(
         
             <>
+<<<<<<< HEAD
             <title>Cadastro</title>
+=======
+>>>>>>> 093441bbec437e4c55d20d711ce925f2450bf40e
             <h1 className="font-bold text-2xl text-center">Cadastre-se</h1>
             <AuthInput label="Username" newState={setUserName} />
             <AuthInput label="Email" newState={setEmail} />

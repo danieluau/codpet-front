@@ -146,8 +146,13 @@ function Post(props:{post: IPost}) {
       {likesQuery.data && likesQuery.data.length > 0 && (
         <>
           <div className="flex gap-1 items-center">
+<<<<<<< HEAD
             <span className={`bg-red-500 w-6 h-6 text-white flex items-center justify-center rounded-full text-xs ${liked ? "animate-like" : ""}`}>
               <FaHeart />
+=======
+            <span className="bg-blue-600 w-6 h-6 text-white flex items-center justify-center rounded-full text-xs">
+              <FaThumbsUp />
+>>>>>>> 093441bbec437e4c55d20d711ce925f2450bf40e
             </span>
             <span>{likesQuery.data.length}</span>
           </div>
@@ -168,6 +173,7 @@ function Post(props:{post: IPost}) {
   </div>
 
   <div className="flex justify-around py-4 text-gray-600 border-b">
+<<<<<<< HEAD
       <button
           className={`flex items-center gap-1 ${liked ? "text-red-500" : ""} transition-all duration-300 hover:text-red-500`}
           onClick={() => shareLikes()}
@@ -201,6 +207,35 @@ function Post(props:{post: IPost}) {
         placeholder="Faça um comentário"
       />
 
+=======
+    <button className={`flex items-center gap-1 ${liked ? "text-blue-600" : ""}`} onClick={() => shareLikes()}><FaThumbsUp />curtir</button>
+    <button className="flex items-center gap-1" onClick={() => document.getElementById('comment' + id)?.focus}><FaRegComment />comentar</button>
+  </div>
+
+  {showComments && commentQuery.data?.map((comment, id) => (
+    <Comment comment={comment} key={id} />
+  ))}
+
+  <div className="flex gap-4 pt-6">
+    <Link href={'/profile?id=' + user?.id}>
+      <img
+        src={user?.userImg ? user.userImg : 'https://www.digitary.net/wp-content/uploads/2021/07/Generic-Profile-Image.png'}
+        alt="imagem do perfil"
+        className="u-8 h-8 rounded-full"
+      />
+    </Link>
+
+    <div className="w-full bg-zinc-100 flex items-center text-gray rounded-b">
+      <input
+        id={"comment" + id}
+        type="text"
+        className="bg-zinc-100 w-full focus-visible:outline:none rounded-full px-4"
+        value={comment_desc}
+        onChange={(e) => setComment_desc(e.target.value)}
+        placeholder="Faça um comentário"
+      />
+
+>>>>>>> 093441bbec437e4c55d20d711ce925f2450bf40e
       <button
         onClick={() => shareComment()}
         className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 focus:outline-none"
@@ -210,7 +245,10 @@ function Post(props:{post: IPost}) {
     </div>
   </div>
 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 093441bbec437e4c55d20d711ce925f2450bf40e
 
 
     )

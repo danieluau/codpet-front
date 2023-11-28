@@ -32,7 +32,10 @@ function Login() {
 
     return (
         <>
+<<<<<<< HEAD
         <title>Login</title>
+=======
+>>>>>>> 093441bbec437e4c55d20d711ce925f2450bf40e
           <h1 className="font-bold text-2xl text-center">Login</h1>
           <AuthInput label="Email: " newState={setEmail} />
           <AuthInput label="Senha: " newState={setPassword} isPassword />
