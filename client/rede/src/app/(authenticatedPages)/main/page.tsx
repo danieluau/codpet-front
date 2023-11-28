@@ -35,8 +35,8 @@ function Main() {
 
     return (
     <>
-    <title>pagina inicial</title>
-    <div className="w-2/6 flex flex-col gap-5">
+    <title> Página Inicial</title>
+    <div className="w-2/4 flex flex-col gap-5">
         <Share />
         <Feed post={postQuery.data}/>
     </div>
