@@ -57,7 +57,7 @@ function Share() {
 
     return(
 
-<div className="w-full bg-white rounded-lg p-4 shadow-md">
+<div className="w-full sm:w-2/4 bg-white rounded-lg p-4 shadow-md flex flex-col">
   {img && <img src={postImg} alt="img do post" className="w-full rounded-lg mb-2" />}
   <div className="flex items-start gap-4">
 
@@ -85,7 +85,9 @@ function Share() {
             onChange={(e) => e.target.files && setImg(e.target.files[0])}
           />
           <label htmlFor="img" className="cursor-pointer">
+            
             <TbPhoto className='text-2xl text-gray-500 hover:text-blue-500' />
+
           </label>
         </div>
         <button
