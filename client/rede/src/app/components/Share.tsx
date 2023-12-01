@@ -73,14 +73,14 @@ function Share() {
       <textarea
         placeholder={`O que está acontecendo, ${user?.username}?`}
         value={post_desc}
-        className="w-full focus:outline-none rounded-lg resize-none"
+        className="w-full focus:outline-none resize-none border-b-2 border-gray"
         onChange={(e) => setDesc(e.target.value)}
       />
     </div>
   </div>
 
   <div className="flex justify-between items-center">
-    <div className="flex items-center">
+    <div className="flex items-center ">
       <input
         type="file"
         id="img"
