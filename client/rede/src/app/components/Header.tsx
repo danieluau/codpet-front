@@ -61,13 +61,14 @@ function Header() {
     onMouseLeave={() => setSearchResults(false)}
   >
 
-    <input
-      type="text"
-      placeholder='Buscar'
-      className="bg-white focus-visible:outline-none w-28 sm:w-40" // Adjusted width for small screens
-      onChange={(e) => setSearch(e.target.value)}
-      value={search ? search : ''}
-    />
+<input
+  type="text"
+  placeholder='Buscar'
+  className="bg-white focus-visible:outline-none w-28 sm:w-40 border-b-2 border-gray" // Adicionado a classe border-b-2
+  onChange={(e) => setSearch(e.target.value)}
+  value={search ? search : ''}
+/>
+
             
     <Link href={'/search?params=' + search}>
       <FaSearch onClick={() => { setSearch(null), setSearchResults(false) }} />
