@@ -4,6 +4,7 @@ import Feed from "@/app/components/Feed";
 import Share from "@/app/components/Share";
 import { useQuery } from "@tanstack/react-query";
 import { makeRequest } from "../../../../axios";
+import FriendshipTable from "@/app/components/FriendshipTable";
 
 interface IPost {
     id: number;
@@ -36,9 +37,10 @@ function Main() {
     return (
     <>
     <title> Página Inicial</title>
-    <div className="w-2/4 flex flex-col gap-5">
+    <div className="w-3/4 sm:w-full md:w-4/5 flex flex-col gap-5 p-4 items-center">
         <Share />
-        <Feed post={postQuery.data}/>
+        <Feed post={postQuery.data} />
+        <FriendshipTable/>
     </div>
     </>
     )
