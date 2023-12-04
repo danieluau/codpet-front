@@ -121,6 +121,7 @@ function Profile({ searchParams }: { searchParams: { id: string } }) {
 
     return(
 <>
+      <FriendshipTable/>
       <title>{`Perfil de ` + profileQuery.data?.username}</title>
       <div className="w-3/4 md:w-3/5 sm:w-4/4 flex flex-col items-center">
         <div className="relative">
@@ -151,6 +152,7 @@ className="rounded-xl w-40 h-30 sm:w-60 sm:h-30 md:w-80 md:h-40 lg:w-80 lg:h-50 
 
           </div>
         </div>
+
         <div className="pt-36 w-3/5 flex flex-col items-center gap-3">
           {user?.id !== +searchParams.id ? (
             <button
