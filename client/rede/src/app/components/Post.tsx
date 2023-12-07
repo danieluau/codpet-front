@@ -23,7 +23,6 @@ function Post(props:{post: IPost}) {
     const [showComments, setShowComments] = useState(false)
     const [liked, setLiked] = useState(false)
     const [showLikes, setShowLikes] = useState(false)
-    const [status, setStatus] = useState('available');
     const queryClient = useQueryClient()
     
     // Likes QUery
@@ -108,12 +107,6 @@ function Post(props:{post: IPost}) {
         setComment_desc('')
     }
 
-    const toggleStatus = async () => {
-      const newStatus = status === 'available' ? 'sold' : 'available';
-      await makeRequest.put(`posts/${id}`, { status: newStatus });
-      setStatus(newStatus);
-    };
-    
     return (
 <div className="w-full bg-white rounded-lg p-4 shadow-md min-h-[300px]">
   <div className="overflow-hidden"> {/* Adicionado div com overflow-hidden */}
@@ -130,12 +123,6 @@ function Post(props:{post: IPost}) {
     </div>
   </Link>
 
-  <button
-    onClick={toggleStatus}
-    className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 focus:outline-none ml-auto"
-  >
-    {status === 'available' ? 'Encontrado' : 'Perdido'}
-  </button>
 </header>
 
 
