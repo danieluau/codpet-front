@@ -24,8 +24,6 @@ function Post(props:{post: IPost}) {
     const [showComments, setShowComments] = useState(false)
     const [liked, setLiked] = useState(false)
     const [showLikes, setShowLikes] = useState(false)
-    const [status, setStatus] = useState('available');
-    const [statusMenuOpen, setStatusMenuOpen] = useState(false);
     const queryClient = useQueryClient()
 
     // Likes QUery
@@ -110,13 +108,6 @@ function Post(props:{post: IPost}) {
         setComment_desc('')
     }
 
-    const toggleStatus = async () => {
-        const newStatus = status === 'available' ? 'sold' : 'available';
-        await makeRequest.put(`posts/${id}`, { status: newStatus });
-        setStatus(newStatus);
-        setStatusMenuOpen(false); // Feche o menu após clicar em uma opção
-    };
-
 
     return (
         <div className="w-full bg-white rounded-lg p-4 shadow-md min-h-[300px]">
@@ -135,24 +126,6 @@ function Post(props:{post: IPost}) {
                         <span className="text-xs">{moment(created_at).fromNow().charAt(0).toUpperCase() + moment(created_at).fromNow().slice(1)}</span>
                     </div>
 
-                    <div className="ml-auto">
-                        {/* Ícone de três pontos que atua como um botão */}
-                        <div className="cursor-pointer" onClick={() => setStatusMenuOpen(!statusMenuOpen)}>
-                            <RiMore2Fill size={24} />
-                        </div>
-
-                        {statusMenuOpen && (
-                            <div className="absolute border-b right-0 top-0 mt-8 bg-zinc-200 p-2 rounded-full">
-                                {/* Opções do menu */}
-                                <button
-                                    onClick={toggleStatus}
-                                    className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 focus:outline-none ml-auto"
-                                >
-                                    {status === 'available' ? 'Encontrado' : 'Perdido'}
-                                </button>
-                            </div>
-                        )}
-                    </div>
                 </header>
 
 
